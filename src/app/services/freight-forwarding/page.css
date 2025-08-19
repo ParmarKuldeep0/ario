@@ -1,0 +1,366 @@
+/* src/app/services/nvocc-agency/page.css */
+/* Identical class names to freight-forwarding/page.css */
+
+/* Base Styles with Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.freight-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+ 
+/* Hero Section - Identical to freight */
+.freight-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00397F 0%, #00397F 50%, #00397F 100%);
+  color: white;
+  padding: 10rem 1rem;
+  text-align: center;
+  /* Responsive clip-path solution */
+  clip-path: ellipse(90% 60% at 50% 35%); /* More forgiving ellipse */
+ 
+  height: auto; /* Let content determine height */
+  min-height: 80vh; /* Fallback */
+}
+.freight-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.1; }
+  100% { opacity: 0.3; }
+}
+
+.freight-hero-title {
+ text-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    margin-bottom: 1.5rem;
+    font-size: max(2.5rem, min(5vw, 4.5rem));
+    font-weight: 800;
+    line-height: 1.1;
+    animation: .8s ease-out .4s both fadeIn;
+}
+
+/* Intro Section - Identical */
+.freight-intro {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 4rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 10;
+  border: none;
+  background-image: 
+    linear-gradient(to bottom, white, white),
+    radial-gradient(circle at top left, #bfdbfe, transparent 50%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid transparent;
+}
+
+.freight-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.freight-intro p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  height: 1.2rem;
+  width: 4px;
+  background: #16F5CC;
+  border-radius: 2px;
+}
+
+/* Services Section - Identical */
+.freight-services {
+  background: url('/images/wave-pattern.svg') top center/cover no-repeat;
+}
+
+.freight-service-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.freight-service-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.freight-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.freight-service-card:hover::before {
+  opacity: 1;
+}
+
+.freight-service-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.freight-service-icon {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.freight-service-card:hover .freight-service-icon {
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+  transform: rotate(5deg) scale(1.1);
+}
+
+.freight-service-content {
+  padding: 2.5rem;
+}
+
+.freight-service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.freight-service-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 2.5rem;
+  height: 3px;
+  background: #17EDD1;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.freight-service-card:hover .freight-service-title::after {
+  width: 4rem;
+}
+
+/* Why Choose Us Section - Identical */
+.freight-why {
+  position: relative;
+  background: #003B7D;
+  color: white;
+  overflow: hidden;
+}
+
+.freight-why::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    url('/images/ship-silhouette.svg') bottom -50px right -50px/300px no-repeat,
+    url('/images/cargo-silhouette.svg') top -50px left -50px/300px no-repeat;
+  opacity: 0.05;
+}
+
+.freight-feature-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.freight-feature-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.freight-feature-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-0.5rem);
+}
+
+.freight-feature-icon {
+  font-size: 2.5rem;
+  color: #93c5fd;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.freight-feature-card:hover .freight-feature-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+/* CTA Section - Identical */
+.freight-cta {
+  position: relative;
+  background: #00397F;
+  color: white;
+  padding: 10rem 0;
+  margin-top: 4rem;
+  overflow: hidden;
+  clip-path: ellipse(71% 59% at 50% 40%);
+}
+
+.freight-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/world-map-dark.svg') center/cover;
+  opacity: 0.08;
+  animation: pan 60s linear infinite;
+}
+
+@keyframes pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.freight-cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Section Header - Identical */
+.freight-section-header {
+  margin-top: 4rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.freight-section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.freight-section-divider {
+  width: 80px;
+  height: 4px;
+  background: #00397F;
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+/* Buttons - Identical */
+.freight-button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  color: #1e40af;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.freight-button-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.freight-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.freight-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px) scale(1.05);
+  border-color: white;
+}
+
+/* Responsive Adjustments - Identical */
+@media (max-width: 768px) {
+  .freight-hero {
+    padding: 12rem 1rem;
+    clip-path: ellipse(71% 59% at 50% 40%);
+    height: 80vh;
+  }
+  
+  .freight-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .content {
+    margin-top: -175px;
+  }
+  
+  .freight-intro {
+    padding: 2.5rem;
+   
+  }
+
+  .freight-section-title{
+    padding: 10px;
+  }
+  
+  .freight-cta {
+    padding: 11rem 0;
+    clip-path: ellipse(71% 59% at 50% 40%);
+  }
+}

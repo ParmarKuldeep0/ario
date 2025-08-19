@@ -1,0 +1,561 @@
+/* Base Styles */
+.vessel-container {
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin-top: -75px;
+}
+
+/* Hero Section */
+.vessel-hero {
+  position: relative;
+  background: linear-gradient(135deg,#01397E 0%, #01397E 100%);
+  color: white;
+  padding: 6rem 0rem;
+  text-align: center;
+  overflow: hidden;
+  clip-path: ellipse(71% 59% at 50% 40%);
+ 
+}
+
+.vessel-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/wave-pattern.svg') center/cover;
+  opacity: 0.1;
+}
+
+.vessel-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+  margin-top: 6rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.vessel-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vessel-hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.vessel-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Intro Section */
+.vessel-intro-section {
+  position: relative;
+  margin-top: -5rem;
+  z-index: 10;
+  padding-bottom: 4rem;
+}
+
+.vessel-intro-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.vessel-intro-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.vessel-intro-content {
+  columns: 2;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.vessel-intro-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  break-inside: avoid;
+}
+
+.vessel-intro-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.vessel-stat {
+  text-align: center;
+}
+
+.vessel-stat-number {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #01397E;
+  line-height: 1;
+}
+
+.vessel-stat-label {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Services Section */
+.vessel-services {
+  padding: 6rem 0;
+  background: #f8fafc;
+}
+
+.vessel-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.vessel-section-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #e0e7ff;
+  color: #00397F;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.vessel-section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.vessel-section-description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ebebeb;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.vessel-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.vessel-service-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.vessel-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  border-color: rgba(37,99,235,0.2);
+}
+
+.vessel-service-icon {
+  margin-bottom: 1.5rem;
+}
+
+.vessel-service-title {
+  font-size: clamp(1.2rem, 1.5vw, 1.3rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.vessel-service-description {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
+}
+
+/* Why Choose Us Section */
+.vessel-why {
+  background: linear-gradient(135deg, #01397E 0%, #01397E 100%);
+  color: white;
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  margin: 4rem 0;
+}
+
+.vessel-why::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/ship-silhouette.svg') bottom right/300px no-repeat;
+  opacity: 0.05;
+}
+
+.vessel-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.vessel-feature-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.vessel-feature-card:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-5px);
+}
+
+.vessel-feature-icon {
+  margin-bottom: 1.5rem;
+  color: #93c5fd;
+}
+
+.vessel-feature-title {
+  font-size: clamp(1.2rem, 1.5vw, 1.3rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.vessel-feature-description {
+  opacity: 0.9;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
+}
+
+/* Vessel Types Section */
+.vessel-types {
+  padding: 6rem 0;
+}
+
+.vessel-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vessel-type-card {
+  border-radius: 0.75rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.vessel-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.vessel-type-icon {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.vessel-type-name {
+  font-weight: 600;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+
+/* CTA Section */
+.vessel-cta {
+  background: linear-gradient(135deg, #01397E 0%, #01397E 100%);
+  color: white;
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  clip-path: ellipse(71% 59% at 50% 40%);
+}
+
+.vessel-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/world-map.svg') center/cover;
+  opacity: 0.1;
+}
+
+.vessel-cta-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vessel-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.vessel-cta-title {
+ font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.vessel-cta-description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+
+.vessel-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.vessel-button-primary {
+  background: white;
+  color: #01397E;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
+}
+
+.vessel-button-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
+}
+
+.vessel-button-secondary {
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.3);
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
+}
+
+.vessel-button-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-3px);
+  border-color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .vessel-hero {
+    padding: 12rem 1rem;
+  }
+  
+  .vessel-intro-card {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .vessel-hero {
+    padding: 5rem 1rem;
+   clip-path: ellipse(71% 59% at 50% 40%);
+  }
+  
+  .vessel-cta {
+   clip-path: ellipse(71% 59% at 50% 40%);
+  }
+}
+
+@media (max-width: 768px) {
+  .vessel-container {
+    padding: 3rem 1.5rem;
+    margin-top: 60px;
+
+  }
+  .vessel-types{
+    padding: 2rem;
+  }
+  
+  
+  .vessel-hero {
+    padding: 8rem 1rem;
+   clip-path: ellipse(71% 59% at 50% 40%);
+    margin-top: -250px;
+  }
+  
+  .vessel-intro-section {
+    margin-top: -3rem;
+  }
+  
+  .vessel-intro-card {
+    padding: 2rem;
+  }
+  
+  .vessel-intro-content {
+    columns: 1;
+  }
+  
+  .vessel-intro-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .vessel-cta {
+    padding: 6rem 0;
+  clip-path: ellipse(71% 59% at 50% 40%);
+  }
+  
+  .vessel-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vessel-button-primary,
+  .vessel-button-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .vessel-type-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .vessel-container {
+    margin-top: 20px;
+  }
+  
+  .vessel-hero {
+    padding: 7rem 1rem;
+    margin-top: -200px;
+  }
+  
+  .vessel-hero-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .vessel-hero-title {
+    font-size: 2rem;
+  }
+  
+  .vessel-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .vessel-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vessel-button-primary,
+  .vessel-button-secondary {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+  
+  .vessel-service-card,
+  .vessel-feature-card {
+    padding: 1.5rem;
+  }
+  
+  .vessel-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .vessel-type-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .vessel-hero {
+    padding: 6rem 1rem;
+    margin-top: -180px;
+  }
+  
+
+  .vessel-hero-title {
+    font-size: 2rem;
+  }
+  
+  .vessel-type-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+ 
+@media 
+  (min-width: 1344px) and (max-width: 1700px),
+  (min-resolution: 168dpi) and (max-resolution: 172dpi) {
+  
+  /* Adjustments for 175% zoom */
+  .vessel-hero {
+    padding: 8rem 0; /* More vertical spacing */
+    margin-top: -120px;
+  }
+
+  .vessel-hero-title {
+    font-size: clamp(3rem, 5vw, 4.5rem); /* Larger text */
+  }
+
+  .vessel-button-primary,
+  .vessel-button-secondary {
+    padding: 1.25rem 2.5rem; /* Bigger buttons */
+  }
+
+  .vessel-service-card,
+  .vessel-feature-card {
+    padding: 3rem; /* More internal space */
+  }
+
+  /* Fix container width to prevent over-scaling */
+  .vessel-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
