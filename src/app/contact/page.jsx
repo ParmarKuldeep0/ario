@@ -55,11 +55,11 @@ const ContactSection = () => {
     setSubmitStatus({ message: '', isError: false });
 
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
-      const response = await fetch(`${API_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('https://ario3.bcsads.com/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 

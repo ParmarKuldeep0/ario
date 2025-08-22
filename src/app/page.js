@@ -10,7 +10,11 @@ const About = React.lazy(() => import('./About/mainPage/about'))
 const Service = React.lazy(() => import('./Service/mainFile/Service'))
 const Carousel = React.lazy(() => import('./components/ui/LogoCarousel'))
 const WhyChooseUs = React.lazy(() => import('./components/ui/whyChooseUs'))
+ 
 const Carrer = React.lazy(() => import("./carrer/carrer"))
+ 
+const Carrer = React.lazy(() => import("./whychoooseus/whychooseus"))
+ 
 const Cta = React.lazy(() => import("./contact/mainPage/cta"))
 const Faq = React.lazy(() => import("./faq/faq"))
 const WhereweServe = React.lazy(() => import("./whereweserve/whereweserve"))
