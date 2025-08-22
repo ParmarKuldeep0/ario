@@ -1,0 +1,130 @@
+$primary: #00acc1;
+
+.map-container {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    user-select: none;
+  }
+
+  svg {
+    overflow: visible;
+    path {
+      opacity: 0.8;
+    }
+  }
+
+  .point {
+    cursor: pointer;
+    position: absolute;
+    width: 0.8vw;
+    height: 0.8vw;
+    min-width: 0.6rem;
+    min-height: 0.6rem;
+    max-width: 0.8rem;
+    max-height: 0.8rem;
+    background-color: $primary;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: transform 0.3s ease;
+
+    .pulse-animation {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $primary;
+      animation: pulse 3s infinite;
+      z-index: -1;
+    }
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.35);
+      .pulse-animation {
+        animation: none;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .point {
+    width: 1.2vw;
+    height: 1.2vw;
+    min-width: 0.5rem;
+    min-height: 0.5rem;
+    max-width: 0.7rem;
+    max-height: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .point {
+    width: 1.8vw;
+    height: 1.8vw;
+    min-width: 0.5rem;
+    min-height: 0.5rem;
+    max-width: 0.6rem;
+    max-height: 0.6rem;
+  }
+}
+
+.tippy-box.tippy-big {
+  font-size: 1.2rem;
+  padding: 1rem 1.2rem;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+
+  svg {
+    path {
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+      transform-origin: center;
+    }
+
+    circle {
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      
+      &:hover {
+        transform: scale(1.8);
+        transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      }
+    }
+  }
+}

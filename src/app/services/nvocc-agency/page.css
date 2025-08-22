@@ -1,0 +1,616 @@
+/* src/app/services/nvocc-agency/page.css */
+
+/* Base Styles with Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nvocc-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  animation: fadeIn 0.6s ease-out forwards;
+ 
+}
+
+/* Hero Section - More Dynamic */
+.nvocc-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00397F 0%, #00397F 50%, #00397F 100%);
+  color: white;
+  padding: 6rem 1rem;
+  text-align: center;
+ clip-path: ellipse(71% 59% at 50% 40%);
+ min-height: 70vh;
+ 
+}
+
+.nvocc-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.1; }
+  100% { opacity: 0.3; }
+}
+
+.nvocc-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+
+  z-index: 1;
+}
+
+.nvocc-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.nvocc-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.nvocc-hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  opacity: 0.9;
+  animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+/* Intro Section - More Premium */
+.nvocc-intro {
+ 
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 4rem;
+ 
+  position: relative;
+  z-index: 10;
+  border: none;
+  background-image: 
+    linear-gradient(to bottom, white, white),
+    radial-gradient(circle at top left, #bfdbfe, transparent 50%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid transparent;
+}
+
+.nvocc-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.nvocc-intro p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  height: 1.2rem;
+  width: 4px;
+  background: #1CFCCA;
+  border-radius: 2px;
+}
+
+/* Services Section - More Interactive */
+.nvocc-services {
+  padding: 6rem 0;
+  background: url('/images/wave-pattern.svg') top center/cover no-repeat;
+}
+
+.nvocc-service-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.nvocc-service-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.nvocc-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nvocc-service-card:hover::before {
+  opacity: 1;
+}
+
+.nvocc-service-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.nvocc-service-icon {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.nvocc-service-card:hover .nvocc-service-icon {
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+  transform: rotate(5deg) scale(1.1);
+}
+
+.nvocc-service-content {
+  padding: 2.5rem;
+}
+
+.nvocc-service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.nvocc-service-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 2.5rem;
+  height: 3px;
+  background: #1CFCCA;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.nvocc-service-card:hover .nvocc-service-title::after {
+  width: 4rem;
+}
+
+/* Why Choose Us Section - More Immersive */
+.nvocc-why {
+  position: relative;
+  background: #00397E;
+  color: white;
+  padding: 8rem 0;
+  overflow: hidden;
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  margin: 4rem 0;
+}
+
+.nvocc-why::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    url('/images/ship-silhouette.svg') bottom -50px right -50px/300px no-repeat,
+    url('/images/cargo-silhouette.svg') top -50px left -50px/300px no-repeat;
+  opacity: 0.05;
+}
+
+.nvocc-feature-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.nvocc-feature-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nvocc-feature-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nvocc-feature-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-0.5rem);
+}
+
+.nvocc-feature-card:hover::before {
+  transform: scale(1);
+}
+
+.nvocc-feature-icon {
+  font-size: 2.5rem;
+  color: #93c5fd;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nvocc-feature-card:hover .nvocc-feature-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Industries Section - More Engaging */
+.nvocc-industries {
+  padding: 6rem 0;
+  background: #f8fafc;
+}
+
+.nvocc-industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nvocc-industry-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.nvocc-industry-chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nvocc-industry-chip:hover {
+  transform: translateY(-0.5rem) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.nvocc-industry-chip:hover::before {
+  opacity: 1;
+}
+
+/* CTA Section - More Impactful */
+.nvocc-cta {
+  position: relative;
+  background: #1e3a8a;
+  color: white;
+  padding: 10rem 0;
+  overflow: hidden;
+  clip-path: ellipse(71% 59% at 50% 40%);
+  margin-top: 4rem;
+}
+
+.nvocc-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/world-map-dark.svg') center/cover;
+  opacity: 0.08;
+  animation: pan 60s linear infinite;
+}
+
+@keyframes pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.nvocc-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #00397F 0%, #00397F 50%, #00397F 100%);
+  opacity: 0.95;
+}
+
+.nvocc-cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nvocc-cta-icon {
+  font-size: 4rem;
+  color: #93c5fd;
+  margin-bottom: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.nvocc-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.nvocc-button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  color: #1e40af;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.nvocc-button-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nvocc-button-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.nvocc-button-primary:hover::before {
+  opacity: 1;
+}
+
+.nvocc-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.nvocc-button-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nvocc-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px) scale(1.05);
+  border-color: white;
+}
+
+.nvocc-button-secondary:hover::before {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nvocc-hero {
+    padding: 14rem 1rem;
+     clip-path: ellipse(71% 59% at 50% 40%);
+     margin-top: -160px;
+     height: 100vh;
+  }
+  
+  .nvocc-intro {
+    padding: 2.5rem;
+
+  }
+  
+  .nvocc-cta {
+    padding: 11rem 0;
+   clip-path: ellipse(71% 59% at 50% 40%);
+  }
+  
+  .nvocc-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nvocc-button-primary,
+  .nvocc-button-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* Base font size increased and scaling improved */
+html {
+  font-size: 16px;
+}
+
+/* Typography scale */
+.nvocc-hero-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.2;
+}
+
+.nvocc-hero-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.5;
+}
+
+.nvocc-section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.3;
+}
+
+.nvocc-service-title {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.nvocc-service-content p,
+.nvocc-feature-card p,
+.nvocc-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.nvocc-button-primary,
+.nvocc-button-secondary {
+  font-size: 1.15rem;
+}
+
+/* Increased padding for better spacing */
+.nvocc-service-content {
+  padding: 2.5rem;
+}
+
+.nvocc-feature-card {
+  padding: 2.5rem;
+}
+
+.nvocc-industry-chip {
+  padding: 1.25rem 2.25rem;
+  font-size: 1.05rem;
+}
+
+/* Improved contrast */
+.nvocc-service-content p {
+  color: #4b5563; /* Slightly darker gray for better readability */
+}
+
+.nvocc-feature-card p {
+  color: rgba(255,255,255,0.9); /* Brighter text on dark background */
+}
+
+/* Larger icons */
+.nvocc-service-icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+.nvocc-feature-icon {
+  font-size: 2.75rem;
+}
+
+/* Better section spacing */
+.nvocc-services,
+.nvocc-industries,
+.nvocc-why {
+  padding: 10rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .nvocc-service-content,
+  .nvocc-feature-card {
+    padding: 2rem;
+  }
+  
+  .nvocc-industry-chip {
+    padding: 1rem 1.5rem;
+  }
+
+  .nvocc-hero-title {
+    font-size: 2.1rem;
+  }
+  .nvocc-industries{
+    padding: 1rem 0;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+    .nvocc-hero-title{
+      font-size: 1.5rem;
+    }
+}

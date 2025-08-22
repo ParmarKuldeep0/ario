@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wdth,wght@0,125,100..900;1,125,100..900&display=swap');
+.blur-text {
+  font-family: "Saira", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+font-variation-settings: "width" 125, "wght" 200;
+    font-size:clamp(1.5rem, 3.2vw, 3.2rem)
+}
+
+@media (max-width: 768px) {
+  .blur-text {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  
+}
+

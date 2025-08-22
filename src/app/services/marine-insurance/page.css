@@ -1,0 +1,391 @@
+/* src/app/services/marine-insurance/page.css */
+
+/* Base Styles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.marine-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  margin-top: 120px;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Hero Section */
+.marine-hero {
+position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00397F 0%, #00397F 50%, #00397F 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  /* Responsive clip-path solution */
+  clip-path: ellipse(90% 60% at 50% 35%); /* More forgiving ellipse */
+ 
+  height: auto; /* Let content determine height */
+  min-height: 80vh; /* Fallback */
+
+}
+
+.marine-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.1; }
+  100% { opacity: 0.3; }
+}
+
+.marine-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem; 
+  z-index: 1;
+}
+
+.marine-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: 50px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+/* Intro Section */
+.marine-intro {
+  background: white/90;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 4rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 10;
+  border: none;
+  background-image: 
+    linear-gradient(to bottom, white, white),
+    radial-gradient(circle at top left, #bfdbfe, transparent 50%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid transparent;
+}
+
+.marine-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.marine-intro p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  height: 1.2rem;
+  width: 4px;
+  background: #18F3CC;
+  border-radius: 2px;
+}
+
+/* Coverage Section */
+.marine-services { 
+  background: url('/images/wave-pattern.svg') top center/cover no-repeat;
+}
+
+.marine-service-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.marine-service-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.marine-section-title{
+  font-size: 2.5rem;
+}
+
+.marine-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.marine-service-card:hover::before {
+  opacity: 1;
+}
+
+.marine-service-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.marine-service-icon {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.marine-service-card:hover .marine-service-icon {
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+  transform: rotate(5deg) scale(1.1);
+}
+
+.marine-service-content {
+  padding: 2.5rem;
+}
+
+.marine-service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.marine-service-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 2.5rem;
+  height: 3px;
+  background: #16F4CD;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.marine-service-card:hover .marine-service-title::after {
+  width: 4rem;
+}
+
+/* Why Choose Us Section */
+.marine-why {
+  position: relative;
+  background: linear-gradient(135deg, #01397E 0%, #01397E 50%, #01397E 100%);
+  color: white;
+  padding: 8rem 0;
+  overflow: hidden;
+  margin: 4rem 0;
+}
+
+.marine-why::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    url('/images/ship-silhouette.svg') bottom -50px right -50px/300px no-repeat,
+    url('/images/anchor-icon.svg') top -50px left -50px/150px no-repeat;
+  opacity: 0.05;
+}
+
+.marine-feature-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.marine-feature-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.marine-feature-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-0.5rem);
+}
+
+.marine-feature-icon {
+  font-size: 2.5rem;
+  color: #93c5fd;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.marine-feature-card:hover .marine-feature-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Industries Section */
+.marine-industries {
+ 
+  background: #f8fafc;
+}
+
+/* CTA Section */
+.marine-cta {
+  font-size: 1.5rem;
+  position: relative;
+  background: #01397E;
+  color: white;
+  padding: 10rem 0;
+  overflow: hidden;
+  clip-path: ellipse(71% 59% at 50% 40%);
+  margin-top: 4rem;
+}
+
+.marine-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/world-map-dark.svg') center/cover;
+  opacity: 0.08;
+  animation: pan 60s linear infinite;
+}
+
+@keyframes pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.marine-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #01397E 0%, #01397E 50%, #01397E 100%);
+  opacity: 0.95;
+}
+
+.marine-cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.marine-cta-title{
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/* Buttons */
+.marine-button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  color: #01397E;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.marine-button-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.marine-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.marine-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px) scale(1.05);
+  border-color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .marine-hero {
+    margin-top: -90px;
+      clip-path: ellipse(71% 59% at 50% 40%);
+    height: 100vh;
+  }
+  .marine-button-secondary{
+    padding: 1.25rem 2.5rem;
+  }
+  
+  .marine-hero-title{
+    font-size: 1.5rem;
+  }
+
+  .marine-intro {
+    padding: 2.5rem;
+    margin-top: -4rem;
+  }
+  
+  .marine-cta {
+    padding: 11rem 0;
+      clip-path: ellipse(71% 59% at 50% 40%);
+  }
+  
+  .marine-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .marine-button-primary,
+  .marine-button-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

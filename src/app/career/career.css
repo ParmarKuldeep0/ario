@@ -1,0 +1,214 @@
+/* Hero Section - Keep exactly as is */
+/* Hero Section - Unchanged styling */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/public/career/hero.png') no-repeat center center;
+  background-size: cover;
+  color: rgb(46, 158, 223);
+  text-align: center;
+  padding: 0 20px; 
+  clip-path: ellipse(71% 59% at 50% 40%);
+ 
+ 
+}
+
+/* Content immediately after hero */
+.section-after-hero {
+  position: relative;
+  z-index: 1;
+ 
+  padding-top: 40px; /* Added top padding */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-section {
+    margin-bottom: -180px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+ 
+
+    
+   clip-path: ellipse(71% 59% at 50% 15%);
+  
+  }
+  .section-after-hero {
+ 
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  
+  .section-after-hero {
+  
+    padding-top: 20px;
+  }
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  bottom: -10px;
+}
+
+/* Content after hero - Reduced spacing */
+.intro-section {
+  padding-top: 40px; /* Reduced from 80px */
+  padding-bottom: 60px;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .hero-section {
+  
+    min-height: 360px; /* Matches smallest device */
+    clip-path: ellipse(104% 48% at 44% 26%);
+ 
+    
+     
+    
+    /* Smart image positioning */
+    background-position: center 25%;
+    background-size: cover;
+    
+    /* Better text contrast */
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.15);
+  }
+
+  .hero-content {
+    width: 95%;
+    padding: 0 10px;
+    transform: translateY(-5%);
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .hero-content h2 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/* Micro-adjustment for 360-400px devices */
+ 
+.section-after-hero {
+  position: relative;
+  z-index: 1; 
+}
+
+/* Modified other sections with better spacing */
+.intro-section {
+  padding: 60px 0; /* Reduced from 80px */
+  background-color: white;
+  text-align: center;
+}
+
+.main-content {
+  padding: 50px 0; /* Reduced from 60px */
+  background-color: var(--light-color);
+}
+
+.tab-content {
+  padding: 30px; /* Reduced from 40px */
+}
+
+.benefit-card {
+  padding: 25px; /* Reduced from 30px */
+}
+
+.culture-section {
+  padding: 70px 0; /* Reduced from 80px */
+}
+
+.testimonial-section {
+  padding: 70px 0; /* Reduced from 80px */
+}
+
+.cta-section {
+  padding: 80px 0; /* Reduced from 100px */
+}
+
+/* Adjusted grid gaps for better spacing */
+.why-ario-content,
+.positions-grid,
+.culture-grid {
+  gap: 20px; /* Reduced from 25-30px */
+}
+
+/* More compact form elements */
+.form-group {
+  margin-bottom: 15px; /* Reduced from 20px */
+}
+
+.form-group input {
+  padding: 10px 12px ; /* Reduced from 12px 15px */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-after-hero {
+  
+        clip-path: ellipse(71% 59% at 50% 15%);
+  }
+  
+  .intro-section,
+  .main-content,
+  .culture-section,
+  .testimonial-section,
+  .cta-section {
+    padding: 50px 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem; /* Slightly larger than previous mobile size */
+    margin-bottom: 15px;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+ 
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .tab-btn {
+    padding: 10px 15px; /* More compact tabs */
+  }
+}
